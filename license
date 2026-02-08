@@ -1,0 +1,137 @@
+Istockhomes Public Platform License
+
+Version 1.0
+
+Copyright © Istockhomes
+All rights reserved where explicitly stated.
+
+1. Purpose
+
+This license governs the use of Istockhomes public repositories, including but not limited to:
+
+Paruse (viewer applications)
+
+Istockhomes client applications
+
+UI, UX, and presentation-layer code
+
+These repositories are published to demonstrate direction, enable participation, and allow developers to build value on top of the Istockhomes platform — not to replicate or extract it.
+
+2. What You Are Allowed To Do
+
+You are explicitly permitted to:
+
+View, download, and run the source code
+
+Modify, reskin, and adapt the user interface
+
+Create white-label or branded versions
+
+Distribute or sell applications built from this code
+
+Use the code as a learning or starting point
+
+Build commercial products that connect to Istockhomes
+
+No royalties are required to use or distribute the client-side code itself.
+
+3. Platform Participation & Revenue
+
+Applications built using this code may connect to Istockhomes infrastructure.
+
+When a transaction occurs through Istockhomes:
+
+Payment distribution is handled automatically and server-side
+
+Platform participation is non-negotiable
+
+Client-side code does not control payouts
+
+Developers, operators, creators, and contributors may participate
+when properly registered to an entity before sales occur
+
+The platform enforces a fixed participation layer.
+The remaining value is defined by the creator and operator.
+
+No client application may override, bypass, or redirect platform rules.
+
+4. What Is Explicitly Excluded
+
+This license does not grant access to:
+
+Backend source code
+
+Database schemas or credentials
+
+Payment routing logic
+
+Trust, payout, or governance logic
+
+Admin or approval systems
+
+Private APIs or infrastructure
+
+“Inner core” systems or documentation
+
+These systems are intentionally protected and are not open source.
+
+5. Restrictions
+
+You may not:
+
+Replicate or reimplement Istockhomes backend systems
+
+Create competing platforms using the same economic model
+
+Circumvent or interfere with payment distribution
+
+Misrepresent your application as the Istockhomes platform itself
+
+Claim ownership of Istockhomes trademarks, names, or branding
+
+Present yourself as part of the Istockhomes core team without approval
+
+6. Trademarks & Naming
+
+“Istockhomes” and associated marks are protected.
+
+You may state that your application:
+
+“Integrates with the Istockhomes platform”
+
+You may not imply ownership, endorsement, or control unless explicitly authorized.
+
+7. No Warranty
+
+This software is provided as-is, without warranty of any kind.
+
+Use of this code is at your own risk.
+
+8. Philosophy (Non-Binding, But Intentional)
+
+Istockhomes is built on the belief that:
+
+Participation should be earned through contribution
+
+Value should flow automatically
+
+Systems should reduce friction, not create it
+
+Trust scales better than contracts
+
+Real assets deserve real infrastructure
+
+If this license makes sense to you, you are likely aligned.
+
+9. Questions & Alignment
+
+If you wish to:
+
+build deeper integrations
+
+access additional repositories
+
+participate as a developer, designer, or operator
+
+Start here:
+https://istockhomes.ca/pages/inside-istockhomes-developers
