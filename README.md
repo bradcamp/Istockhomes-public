@@ -93,6 +93,19 @@ That page explains what we are building and how participation works.
 
 ---
 
+## 📜 The Istockhomes Constitution
+
+This project is governed by the **Istockhomes Constitution**.
+
+- No sign-ups
+- No gatekeepers
+- No secrecy
+- Fork freely
+- Build businesses, not platforms
+
+👉 Read it here: [CONSTITUTION.md](./CONSTITUTION.md)
+
+
 ## Final note
 
 Istockhomes is being built deliberately, quietly, and for the long term.
