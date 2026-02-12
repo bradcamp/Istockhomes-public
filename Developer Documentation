@@ -1,0 +1,344 @@
+📘 Istockhomes Developer Documentation
+Overview
+
+Istockhomes is a modular asset listing platform supporting multiple verticals:
+
+Real Estate
+
+Yacht / Marine
+
+Aircraft
+
+Luxury Rentals
+
+Art
+
+Business
+
+Future: Dating
+
+The system allows developers to build independent mobile apps (iOS, Android, Web) that connect to the central Istockhomes database using a controlled public API.
+
+📂 Project Structure
+App/
+│
+├── dev.php                → Developer discovery API
+├── index.php              → AI image upload + listing creation
+├── edit-listing.php       → Edit listing after AI processing
+├── secure/
+│     └── db.php           → PDO database connection (PRIVATE)
+│
+├── includes/
+│     ├── header.php
+│     └── footer.php
+│
+└── uploads/               → Uploaded images
+
+🔐 Database Connection
+
+File:
+
+/App/secure/db.php
+
+
+Defines:
+
+$pdo = new PDO(...)
+
+
+This file is private and never exposed publicly.
+
+🧠 AI Listing Flow
+
+File:
+
+/App/index.php
+
+
+Flow:
+
+User uploads image
+
+Geolocation captured (browser)
+
+OpenCage resolves address
+
+OpenAI analyzes image
+
+JSON returned:
+
+title
+
+category
+
+price
+
+description
+
+Redirect to:
+
+edit-listing.php
+
+🌐 Developer API
+
+File:
+
+/App/dev.php
+
+
+Base URL:
+
+/App/dev.php
+
+1️⃣ Health Check
+/App/dev.php?health=1
+
+
+Returns:
+
+DB connection status
+
+Server time
+
+Mode (PDO)
+
+2️⃣ Schema (Public Tables Only)
+/App/dev.php?schema=1
+
+
+Returns:
+
+["listings","franchise_branding"]
+
+3️⃣ Describe Table
+/App/dev.php?describe=listings
+
+
+Returns:
+
+Field name
+
+Type
+
+Null
+
+Key
+
+Default
+
+Extra
+
+Private fields automatically removed.
+
+4️⃣ Select Data
+
+Example:
+
+/App/dev.php?select=1&table=listings&fields=id,title,price,category&limit=10
+
+
+Supports:
+
+where[field]=value
+like[field]=text
+order_by=field
+order_dir=asc|desc
+limit
+offset
+vertical=yacht|aircraft|luxury_rentals|homes_for_sale
+
+🔒 Privacy Rules
+
+The following fields are never exposed:
+
+email
+
+phone
+
+password_hash
+
+tokens
+
+verification codes
+
+biometric credentials
+
+PayPal accounts
+
+Location Privacy
+Yacht / Aircraft
+
+Address removed
+
+GPS rounded (2 decimals)
+
+Dating (future table)
+
+Address removed
+
+GPS removed
+
+Luxury Rentals
+
+Address allowed
+
+GPS rounded (3 decimals)
+
+Homes For Sale
+
+Full address allowed
+
+Full GPS allowed
+
+listings.show_location = 0
+
+GPS always removed
+
+📊 Public Tables
+listings
+
+Core asset table supporting:
+
+Real Estate
+
+Marine
+
+Aircraft
+
+Vehicles
+
+Art
+
+Business
+
+Includes:
+
+title
+
+price
+
+category
+
+description
+
+latitude / longitude
+
+address
+
+aircraft_* fields
+
+marine_* fields
+
+charter_available
+
+sold
+
+franchise_branding
+
+Controls white-label appearance:
+
+franchise_id
+
+logo_path
+
+header_bg_color
+
+accent_color
+
+contact_name
+
+contact_email
+
+contact_phone
+
+🏗 Developer Philosophy
+
+Developers may:
+
+Build their own frontend apps
+
+Choose fields they need
+
+Respect vertical privacy rules
+
+Use their own Apple / Google accounts
+
+Host independently
+
+All public access is through:
+
+/App/dev.php
+
+
+No direct DB access allowed.
+
+🧭 Example Use Cases
+iOS Yacht Charter App
+
+Query listings where category = Marine
+
+Use vertical=yacht
+
+Build map using rounded GPS
+
+Real Estate App
+
+Query listings where category = Real Estate
+
+Use vertical=homes_for_sale
+
+Show address + full location
+
+Aircraft Marketplace
+
+Query category = Aircraft
+
+Use vertical=aircraft
+
+Hide exact airport location
+
+🚀 Future Extensions
+
+Planned:
+
+Public profile table (dating)
+
+Booking system
+
+Payment webhook automation
+
+Versioned API
+
+JWT authentication
+
+⚖ Architecture Notes
+
+PDO only
+
+utf8mb4
+
+No mysqli
+
+Privacy enforced at API layer
+
+Field-level control
+
+Vertical-aware location logic
+
+Contact
+
+Istockhomes
+admin@istockhomes.com
+
+That is clean.
+That is clear.
+That is developer ready.
+
+If you'd like, I can also produce:
+
+• A shorter public GitHub version
+• A Swagger/OpenAPI JSON
+• A “Philosophy & Vision” version
+• A “Build Your Own App on Istockhomes” pitch document
+
+Just tell me which direction.
