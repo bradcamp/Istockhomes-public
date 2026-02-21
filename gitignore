@@ -1,0 +1,13 @@
+.DS_Store
+build/
+DerivedData/
+xcuserdata/
+*.xcworkspace
+*.xcuserstate
+
+# Secrets (never commit)
+**/secure/*.php
+**/*Keys*.php
+**/*Key*.php
+**/.env
+**/config.php
