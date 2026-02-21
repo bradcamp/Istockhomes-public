@@ -105,8 +105,50 @@ This project is governed by the **Istockhomes Constitution**.
 
 👉 Read it here: [CONSTITUTION.md](./CONSTITUTION.md)
 
+## API Structure (Public Read-Only vs Private Write)
 
-## Final note
+Istockhomes uses a **two-surface API model**:
+
+### 1) Public Read-Only API (documented)
+These endpoints are intended for:
+- viewer apps
+- search/browse
+- public discovery
+- read-only dashboards
+
+**No write access is granted through the read-only surface.**
+
+Reference: **API-READONLY.md (API-RO v1.0)**
+
+Typical examples:
+- `GET /App/api/get-listings.php`
+- `GET /App/api/Listings.php`
+- `GET /App/api/get-branding.php`
+
+---
+
+### 2) Private Write API (restricted / not publicly documented)
+These endpoints are intended for:
+- authenticated users
+- listing creation/editing
+- identity verification steps
+- enforcement + permissions
+
+Write access requires:
+- authenticated session tokens
+- server validation
+- eligibility rules (trust / verified state)
+
+Examples (restricted):
+- `POST /App/api/auth.php`
+- `POST /App/api/create-listing.php`
+- any endpoint using `middleware.php` (Bearer token required)
+
+---
+
+## IMPORTANT
+Only endpoints explicitly described in **API-READONLY.md** should be treated as public.
+Everything else is considered internal, restricted, and subject to change.## Final note
 
 Istockhomes is being built deliberately, quietly, and for the long term.
 
