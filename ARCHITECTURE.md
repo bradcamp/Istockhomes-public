@@ -314,6 +314,7 @@ It is what allows Istockhomes to scale safely while remaining open.
 
 - LICENSE.md  
 - DEVELOPERS.md  
+- ARCHITECTURE-DIRECTIVE-008.md  
 - Verification & Consequences  
 - Platform Economics  
 
